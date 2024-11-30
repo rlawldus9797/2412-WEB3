@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <script>
+        //"점수를 입력하세요" 입력창 출력 >> 입력된 점수가
+        //90점 이상이면 "참 잘했어요" 메세지가 문서에 출력이 되고
+        //80점 이상이면 "잘했어요" 메세지가 문서에 출력
+        //70점 이상이면 "수고했어요" 메세지가 문서에 출력
+        //70점 미만이면 "점수를 잘 못 입력했습니다. 다시 입력하세요" 경고메세지 출력, 재입력 유도
+ 
+        let score;
+        score = prompt("점수를 입력하세요", "");
+
+        
+        if(score>=90) {
+            document.write("참 잘했어요!");
+        }else if(score>79) {
+            document.write("잘했어요!");
+        }else if(score>69) {
+            document.write("수고했어요!");
+        }else {
+            alert("점수를 잘 못 입력했습니다. 다시 입력하세요!");
+            window.location.reload();
+        }
+        
+        
         
     </script>
 </head>
