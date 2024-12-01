@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //현재온도 입력 받고 - 평년 5도 기준으로 평년이상, 이하 출력
+
+        let temp = prompt("오늘 온도 입력해주세요");
+        let msg = "평년기준 온도보다 ";
+        const temp2 = 5;
+
+        //'?' 앞 뒤로 띄어쓰기 필수
+        (temp > temp2) ? msg+="높은 온도입니다." :msg+="낮은 온도입니다.";
+        document.write(msg);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

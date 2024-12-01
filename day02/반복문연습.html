@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("<select name='birth' id='year'>");
+
+        for(let i=1924; i<=2024; i++) {
+         //(let i=2024; i>=1924; i--)
+            document.write(`<option value='${i}'> ${i}년 </option>`)
+        }
+        document.write("</select> - ");
+
+        document.write("<select name='birth' id='month'>");
+        for(let j=1; j<=12; j++) {
+            document.write(`<option value='${j}'> ${j}월 </option>`)
+        }
+        document.write("</select> - ");
+
+        document.write("<select name='birth' id='date'>");
+        for(let k=1; k<=31; k++) {
+            document.write(`<option value='${k}'> ${k}일 </option>`)
+        }
+        document.write("</select> - ");
+
+        document.write("<button>제출하기</button>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

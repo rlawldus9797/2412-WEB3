@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //[ sbs, admin, incheon, frontend, web, publisher ]
+    const members = ["sbs", "admin", "incheon", "frontend", "web", "publisher"];
+    let newId = prompt("사용할 아이디를 입력하세요");
+
+    // for(let i=0; i<members.length; i++) {
+    //     if(newId == members[i]) {
+    //         document.write("존재하는 아이디입니다.");
+            
+    //     }else {
+    //         document.write("사용가능한 아이디입니다.");
+    //     }
+    // }
+
+    let idCheck = false;                    //임의변수값이 false면 사용가능, true면 아이디존재 출력
+    for(let i=0; i<members.length; i++) {   //0번째부터 members배열 개수만큼 반복 실행
+        if(newId == members[i]) {           //입력값과 배열의 지정순번째 데이터와 일치여부 판단
+            idCheck = true;                 //일치할 경우 idCheck 변수값이 true로 변경
+        }
+    }
+    if(idCheck==true) {
+        alert("존재하는 아이디입니다.");
+        window.location.reload();
+    }else {
+        document.write("사용가능한 아이디입니다.");
+    }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

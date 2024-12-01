@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let math = prompt("수식을 입력하세요", "");
+        document.write(`<p> ${math} </p>`);
+        document.write(`<p> ${eval(math)} </p>`);
+
+        //document.write(`<p> ${math} = ${eval(math)} </p>`);
+
+        let num = prompt("숫자를 입력하세요", "");
+        if(inNaN(num)) {
+            document.write("문자가 입력되었습니다. 숫자만 입력하세요");
+        }else {
+            document.write("숫자를 바르게 입력했습니다");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

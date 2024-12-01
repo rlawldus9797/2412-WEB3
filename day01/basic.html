@@ -109,6 +109,119 @@ if( condition1 ) {
         (조건1 || 조건2) >> or
 
 
+다중조건 (switch)
+    switch(조건변수) {
+        case "값1":
+            실행코드..;
+            break;
+
+        case2 "값2":
+            실행코드2...;
+            break;
+        ...
+
+        default:
+            실행코드...
+    }
+
+조건문 (if... else ...) 대체 -- 삼항식
+    (조건) ? true시 실행문 : false시 실행문
+
+    
+반복 실행문(유한반복, 실행 시간차 없음) for, while, for..in, do..while
+    for(횟수정의변수선언; 반복횟수조건; 조건접근식) {
+        실행
+    }
+
+    for(let i=1; i<=5; i++) {
+        code..
+    }
+
+    let i=1;
+    while(i<=5) {
+        code...
+        i++
+    }
+
+    중간 실행 생략 >> continue;
+
+
+객체(object) >> 객체.method() / 객체.속성 / 객체.속성=값
+    
+    1. 내장 객체
+        -문자(String), 날짜(Date), 배열(Array), 수학(Math)
+
+    2. 브라우저 객체 모델 (Browser Object Model) BOM
+        -window, screen, location, history, navigator
+    
+    3. 문서 객체 모델 (Document Object Model) DOM
+        -html, body, tag...
+
+
+배열 >> 데이터의 집합(정형화 시킬 수 없는 데이터들을 순차적으로 등록, 필요시 순서에 맞게 호출, 사용하기 위한 집합)
+
+    1. const 배열명 = new Array;
+        배열명[0] = 데이터1;
+        배열명[1] = 데이터2;
+
+    2. const 배열명 = new Array(데이터1, 데이터2);
+
+    3. const 배열명 = [데이터1, 데이터2];
+
+    호출 >> 배열명[순번]
+    
+    배열속성 -- 데이터 수 인식속성(배열.length)
+    ** new Array(3) >> 데이터 입력 제한수 3 의미 **
+
+    id 중복확인 >> 기존 아이디 배열로 정의
+        prompt로 입력받은 아이디와 배열 내 아이디 == 체크(배열갯수만큼 반복해서 == 체크)
+
+    
+배열객체 메서드(내장함수)
+    배열.~()
+    .push(data) : 배열 마지막에 데이터 추가
+
+    .unshift(data) : 배열 맨앞에 데이터 추가
+
+    .splice(순번, 개수) : 지정순번째부터 개수만큼 삭제
+
+    .shift() : 첫번째 데이터 삭제
+
+    .pop() : 마지막 데이터 삭제
+    
+    .reverse() : 데이터 순서 역순으로 변경
+    
+    .sort() : 데이터를 오름차순으로 정렬
+    
+    .slice(순서, 지정마지막순서 바로 뒤 순번) : 지정순서부터 뒤 순서전까지의 데이터로 새로운 배열 생성
+        ex) Ar.splice(2,5) >> 2번째부터 5개 데이터 삭제
+            Ar.slice(2,5) >> 2번째부터 5번째 전까지(4번째) 데이터로 새로운 배열 생성(2,3,4)
+    
+    .concat(데이터, 배열) : 기존배열에 데이터 또는 배열을 결합해서 새로운 배열 생성 
+    
+    .join(연결문자) : 데이터를 연결문자를 사이사이에 붙인 1개의 문자형데이터로 반환하기
+        ex) aa = ["a", "b", "c"]
+            b = aa.join("-") >> "a-b-c"
+            c = ...aa / spread함수(...) : 배열 데이터를 개별로 나누어서 새로운 배열 생성(복제)
+            c = aa 다른 의미 c = ["a", "b", "c"]
+
+
+내장함수
+    eval("~") : 문자형식내 수식 인식 계산
+        ex) "1=2" eval("1+2") >> 3연산 가능
+
+    isNaN(~) : 문자이면 true, 숫자이면 false 값 반환
+
+    parseInt("~") : 정수타입으로 반환(정수 아닌 부분은 버림)
+        ex) "100.4" >> parseInt("100.4") >> 100
+            "212px" >> parseInt("212px") >> 212
+    
+Math객체
+정수화 메서드(함수)
+    Math.floor(number) : 버림 / Math.round(number) : 반올림 / Math.ceil(number) : 올림
+    (정수화는 floor 권장)
+
+    Math.abs(number) : 절대값 
 
 -->
 

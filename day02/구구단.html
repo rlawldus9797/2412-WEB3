@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write('<table align="center" width="800">');
+            document.write('<tr bgcolor="#99ccff">');
+                for(let i=2; i<=9; i++) {
+                    document.write(`<th> ${i}단 </th>`);
+                }
+            document.write('</tr>');
+
+            for(let k=1; k<=9; k++) {
+                document.write('<tr bgcolor="#ccddff">');
+                    for(let j=2; j<=9; j++) {
+                        document.write(`<td align="center"> ${j}x${k}=${j*k} </td>`);
+                    }
+                document.write('</tr>');
+                }
+
+        document.write('</table>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
