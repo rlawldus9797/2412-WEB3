@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+
+        #box {
+            width: 300px;
+            height: 150px;
+            background: #6c6;
+            color: #fff;
+            padding: 7px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#btn1').click(()=> {
+              alert('경고창 열기 \n 클릭이벤트 연습중')  
+            });
+            $('#hideBtn').on('click', ()=> {
+                $('#box').fadeOut(500);
+            })
+            $('#showBtn').on('click', ()=> {
+                $('#box').fadeIn(500);
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div><button id="btn1">경고창 띄우기</button></div>
+    <div>
+        <button id="hideBtn">contentbox 가리기</button>
+        <button id="showBtn">contentbox 보이기</button>
+    </div>
+    <div id="box"> DIV CONTENT BOX </div>
+</body>
+</html>

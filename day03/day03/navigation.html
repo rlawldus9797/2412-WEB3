@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body, nav, ul, li {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: "맑은 고딕",sans-serif;
+            
+        }
+
+        #navbar {
+            width: 700px;
+            height: 36px;
+            margin: 50px auto;
+            padding-top: 4px;
+            background: #036;
+            box-sizing: border-box;
+        }
+
+        #navbar>ul {
+            width: 480px;
+            height: 28px;
+            margin: 0 auto;
+            background: #c90;
+            line-height: 28px;
+            text-align: center;
+            display: flex;
+        }
+
+        #navbar>ul>li {
+            width: 160px;
+            height: 28px;
+        }
+
+        #navbar>ul>li>a {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+        }
+
+        #navbar>ul>li>.sub {
+            background: #fe2;
+            display: none;
+        }
+
+        #navbar>ul>li>.sub a {
+            font-size: 12px;
+            color: #039;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#navbar>ul').on('mouseenter', ()=> {
+                $('.sub').stop().slideDown(300);
+            });
+            $('#navbar>ul').on('mouseleave', ()=> {
+                $('.sub').stop().slideUp(300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li>
+                <a href="javascript:void();">공지사항</a>
+                <ul class="sub">
+                    <li><a href="javascript:;">주간소식</a></li>
+                    <li><a href="#none">새 소식</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void();">회원정보</a>
+                <ul class="sub">
+                    <li><a href="javascript:;">일반회원</a></li>
+                    <li><a href="#none">우수회원</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void();">사이트맵</a>
+                <ul class="sub">
+                    <li><a href="javascript:;">이용약관</a></li>
+                    <li><a href="#none">연락처</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

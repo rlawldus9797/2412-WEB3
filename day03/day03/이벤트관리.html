@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" name="" id="num">
+    <button id="btn1">제곱값 구하기</button>
+    <button id="btn2">2배값 구하기</button>
+    <script>
+        const btn1 = document.querySelector('#btn1');
+        const btn2 = document.querySelector('#btn2');
+        const number = document.querySelector('#num'); //js객체로 호출, 이름정의
+
+        let n = 0;
+        btn1.addEventListener('click', ()=> {
+            n = parseInt(number.value);
+            number.value = n*n;
+        });
+
+        btn2.addEventListener('click', ()=> {
+            n = parseInt(number.value);
+            number.value = n+n;
+        });
+    </script>
+</body>
+</html>

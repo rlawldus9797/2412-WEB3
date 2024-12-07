@@ -223,6 +223,63 @@ Math객체
 
     Math.abs(number) : 절대값 
 
+
+자바스크립트 DOM 선택자
+    document.getElementById(~) : id호출
+    document.getElementsByClass(~) : class호출, 배열
+    document.getElementsByClass(~)[i] : 정상 호출
+    document.getElementsByTagName : tag호출
+    document.getElementsByTagName(~)[i]
+
+<< ECMAScript >>
+    document.quertySelector(css선택) : css선택 요소중 첫번째 요소 호출
+    document.quertySelectorAll(css선택) : 배열에 요쇼 정리
+
+
+개체에 이벤트 적용 <tag onclick="~">
+
+    이벤트 관리자 추가(이벤트 판단 >> 실행함수)
+    obj.addEventListener('event', ()=> {실행명령})
+    obj.addEventListener('event', function(){실행명령})
+
+
+    이벤트 관리자 삭제
+    obj.removeEventListener('click')
+
+
+jquery -- jquery.com / code.jquery.com /
+
+    제이쿼리 선택자 : $('css selector')
+
+    제이쿼리 내장함수  
+        .hide() >> display:none
+        .show() >> display:block
+        .css('속성', '값') / .css('속성') - 속성값 호출
+        .width('값') / .width() / .height(값) / .height()
+
+            ex) .css('width', '800px')  .css('width') >> '620px'
+                .width(800)             .width() >> 620
+
+    display:none <<========>> disaply:block
+    기본단위 1/1000초
+
+        .fadeIn(duration, function(){완료시 실행})
+        .fadeOut(duration, function() { })
+        .slideDown(duration, function)
+        .slideUp(duration, function)
+        .animate({css속성:목표값}, duration, function)
+
+
+
+이벤트 함수()  selector.click(()=>{...})
+    .on('event', ()=> {}) <-> .off('event')
+    - MouseEvent: click, dblclick, mouseover, mouseout, mousedown, mouseup, 
+    mouseenter, mouseleave, mousemove, mousewheel
+
+
+    하위요소 선택자(자식, 자손 요소 찾기)
+        parent.find('selector') - 자손 selector 찾기
+        parent.children('selector') - 자식 selector 찾기
 -->
 
     

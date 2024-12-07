@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 200px; 
+            line-height: 200px; 
+            font-size: 8em;
+            border: 5px solid #939; 
+            margin: 10px;
+        }
+        
+        .div1{height: inherit; background-color: #fc0; display: none;}
+        .div2{height: inherit; background-color: #0cf; }
+        .div3{height: inherit; background-color: #f60; padding-left: 16px; display: none;}
+        .div4{height: inherit; background-color: #06c; padding-left: 16px;}
+        </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            $('.div1').fadeIn(1200, function() {alert('FadeIn Animation Complete!')});
+            $('.div2').fadeOut(800);
+            $('.div3').slideDown('slow');
+            $('.div4').slideUp('fast');
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="div1">Fade In</div>
+    </div>
+    <div class="box">
+        <div class="div2">fade out</div>
+    </div>
+    <div class="box">
+        <div class="div3">slide down</div>
+    </div>
+    <div class="box">
+        <div class="div4">slide up</div>
+    </div>
+</body>
+</html>

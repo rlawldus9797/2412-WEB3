@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const fruit = ["사과", "바나나", "딸기", "오렌지", "포도", "복숭아"];
+
+        document.write(fruit+"<br>");
+
+        let fruitText = fruit.shift(); // 첫번째 데이터 삭제, 값 반환
+        document.write(`fruit 배열에서 삭제된 첫번째 과일은 ${fruitText} 입니다 <br>`);
+        document.write(fruit+"<br>");
+
+        fruitText = prompt("과일이름을 추가 입력하세요", "");
+        fruit.push(fruitText); // 마지막 순서에 데이터 추가
+        fruitText = prompt("과일이름을 추가 입력하세요", "");
+        fruit.push(fruitText);
+        fruitText = prompt("과일이름을 추가 입력하세요", "");
+        fruit.unshift(fruitText); // 제일 앞순서에 데이터 추가
+        document.write(fruit+"<br>");
+
+        fruit.splice(2, 3); // 2번째부터 3개 데이터를 삭제
+        document.write(`fruit 배열에서 세번째부터 3개 데이터를 삭제한 배열 결과는 ${fruit}`);
+
+        fruit.pop(); //마지막 데이터 삭제
+        document.write(`fruit 배열에서 마지막 데이터를 삭제한 배열 결과는 ${fruit}`);
+
+        document.write("새로운 배열 생성 <br>");
+        const numbers = new Array(3, 7, 2, 1, 9, 8, 6, 4, 5, 0);
+        document.write(numbers+"<br>");
+
+        numbers.sort();
+        document.write("크기순으로 정렬"+numbers+"<br>");
+
+        numbers.reverse();
+        document.write("배열순서를 반전시킨 결과"+numbers+"<br>");
+
+        const nums2 = numbers.slice(2, 7); // 2번째부터 7번째 전까지 데이터 복제, 새 배열 생성
+        document.write(`numbers배열 : ${numbers} <br>`);
+        document.write(`numbers배열에서 2번째부터 7번째 전까지 데이터 복제 : ${nums2} <br>`);
+
+        let numString = nums2.join("-"); // 연결문자 선정 후 데이터를 하나의 문자열 처리
+        document.write(`numbers배열 join처리 문자 : ${numString} <br>`);
+
+        let Ar2 = fruit.concat(nums2); 
+        // fruit 배열 뒤로 nums2 배열 합쳐진 새 배열 생성
+
+        document.write(Ar2 + "<br>");
+        document.write(`${fruit}/${nums2}`);
+    
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
