@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src=""></script>
+    <script>
+        $(function(){
+            $('div').animate({'top':'500px'},900, 'Bounce');
+        })
+        // linear, swing, easeIn/daseOut/easeInOut(Quad, Cubic, Quart, Quint, Sine, Expo, Circ,
+        // Elastic, Bounce, Back)
+        // https://easings.net/ko
+    </script>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            background: #9c9;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            left: 40px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>box</div>
+</body>
+</html>

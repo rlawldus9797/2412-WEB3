@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            // 3초마다 첫번째 이미지가 서서히 사라지고 난 뒤에 제일 마지막 위치로 이동하고
+            // setInterval(3000) eq(0)    fadeOut(~,function)    append(appendTo)
+            
+            // 두번째 이미지가 서서히 나타난다.
+            //    eq(1)       fadeIn()
+
+            const poster = $('.slide_container');
+            const slideMove = ()=> {
+                let imgs = poster.find('img');
+                imgs.eq(0).fadeOut(500, function() {
+                    imgs.eq(0).appendTo(poster);
+                });
+                imgs.eq(1).fadeIn(500);
+            }
+            let timer = setInterval(slideMove, 3000);
+            poster.on('mouseenter', function() {
+                clearInterval(timer);
+            });
+            poster.on('mouseleave', function() {
+                timer = setInterval(slideMove, 3000);
+            })
+        })
+    </script>
+    <style>
+        .slide_container {
+            width: 400px;
+            height: 570px;
+            border: 5px solid #09c;
+            margin: 50px auto;
+            position: relative; 
+        }
+
+        .slide_container>img {
+            display: block;
+            width: 400px;
+            height: 570px;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .slide_container>img:not(:first-child) {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide_container">
+        <img src="poster1.jpg" alt="">
+        <img src="poster2.jpg" alt="">
+        <img src="poster3.jpg" alt="">
+        <img src="poster4.jpg" alt="">
+        <img src="poster5.jpg" alt="">
+        <img src="poster6.jpg" alt="">
+    </div>
+</body>
+</html>

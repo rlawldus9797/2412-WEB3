@@ -280,6 +280,41 @@ jquery -- jquery.com / code.jquery.com /
     하위요소 선택자(자식, 자손 요소 찾기)
         parent.find('selector') - 자손 selector 찾기
         parent.children('selector') - 자식 selector 찾기
+
+
+
+js >> 요소 텍스트 출력
+    selector.innerText="~"
+    selector.innerHTML="~"
+    selector.textContent="~"
+
+jq >> 요소 텍스트 출력
+    selector.text("~")
+    selector.html("~")
+    selector.empty()
+
+
+
+반복 실행 명령(반복 시간차 설정)
+    setInterval(실행함수명, 시간차)
+    clearinterval() >> setInterval해제
+
+    초 >> s*6 >> transform:rotate(초+deg)
+    분 >> m*6 >> transform:rotate(분+deg)
+    시 >> h*30+m/2 >> transform:rotate(시+deg)
+
+    js >> obj.style.transform = `rotate(~)`
+
+
+순서(순번)호출 : slelctor.eq(index) 0번째부터
+
+input 명령
+    A.append(B) == B.appendTo(A) : A요소에 B추가삽입(뒤에)
+    A.prepend(B) == B.prependTo(A) : A요소에 B추가삽입(앞에)
+    obj.remove(); : 요소 삭제
+
+
+
 -->
 
     
