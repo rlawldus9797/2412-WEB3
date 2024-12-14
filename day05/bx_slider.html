@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <script>
+        $(function(){
+            $('.slider').bxSlider({
+
+                auto:true,
+                speed:300,
+                pause:3000,
+            });
+        })
+    </script>
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            border: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .bx-wrapper {
+            margin-bottom: 0;
+            border: 0px none;
+            -webkit-box-shadow:none;
+            -moz-box-shadow:none;
+            box-shadow: none;
+        }
+
+        .bx-wrapper .bx-controls-auto, .bx-wrapper .bx-pager {
+            bottom: 26px;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="slide_container">
+        <ul class="slider">
+            <li><a href="#"><img src="/etc/001.jpg" alt=""></a></li>
+            <li><a href="#"><img src="/etc/002.jpg" alt=""></a></li>
+            <li><a href="#"><img src="/etc/003.jpg" alt=""></a></li>
+            <li><a href="#"><img src="/etc/004.jpg" alt=""></a></li>
+        </ul>
+    </section>
+</body>
+</html>

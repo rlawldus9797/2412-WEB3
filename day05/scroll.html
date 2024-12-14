@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $('.bar').draggable({axis:'x', containment:'parent'});
+            //bar의 움직임 비율에 따라 이미지가 움직인다(이동한다)
+            //bar최대이동거리 / bar현재이동거리 / 이미지최대이동거리 / >> 이미지 현재목표거리 계산
+            // 이미지 위치 = (bar현재이동거리/bar최대이동거리)*이미지 최대이동거리
+            // bar 최대이동거리 = track.width - bar.width
+            // img최대이동거리 = img.width = img_content.width
+            // bar현재이동거리 ? ( bar left좌표값) = parseInt(bar.css('left'))
+        })
+
+        const barMax = $('.track').width() - $('.bar').width();
+        const imgMAx = $('.img_content>img').width() - $('.img_content').width();
+        let barRatio = 0;
+        let barCurrent = 0;
+        let targetPosition = 0;
+        $('.bar').on('drag', function() {
+            barCurrent = parseInt( $('.bar').css('left') );
+            barRatio = barCurrent/barMax;
+            targetPosition = -barRatio*imgMax;
+            $('.img_content>.img').css('left',targetPosition);
+        })
+    </script>
+    <style>
+        .container {
+            width: 668px;
+            height: 312px;
+            margin: 60px auto;
+            border: 2px solid #f60; 
+            overflow: hidden;
+        }
+
+        .container > .img_content {
+            width: 668px;
+            height: 300px;
+        }
+
+        .container > .img_content > img {
+            display: block;
+            height: 300px;
+            width: auto;
+            object-fit: cover;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .container > .track {
+            width: 668px;
+            height: 12px;
+            background-color: #ccc;
+        }
+
+        .container > .track > .bar {
+            display: block;
+            width: 76px;
+            height: 12px;
+            background-color: #454545;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="img_content">
+            <img src="/etc/PANORAMA.JPG" alt="">
+        </div>
+        <div class="track">
+            <span class="bar"></span>
+        </div>
+    </section>
+</body>
+</html>

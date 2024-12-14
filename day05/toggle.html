@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 400px;
+            padding: 50px;
+            border: 1px solid #333;
+        }
+
+        #btn {
+            margin: 30px;
+            margin-bottom: 0;
+        }
+
+        #box {
+            width: 400px;
+            height: 300px;
+            margin: 30px;
+            background-color: #f90;
+        }
+
+        #box2 {
+            width: 400px;
+            height: 300px;
+            margin: 30px;
+            background-color: #f09;
+        }
+
+        #box2.active {
+            opacity: 0.5;
+            background-color: #09f;
+            width: 500px;
+            height: 200px;
+            transition: 0.2s;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn').on('click', function(){
+                //$('#box').toggle(); // show(), hide()
+                $('#box').fadeToggle(500); // slideToggle(500)
+
+                /* if문으로 작성했을 때
+                if($('#box').css('display') == 'none') {
+                    $('#box').show();
+                }else {
+                    $('#box').hide();
+                }
+                */
+
+                $('#box2').toggleClass('active');
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">div box show/hide</button>
+    <div class="container">
+        <div id="box">div box</div>
+    </div>
+    <div class="container">
+        <div id="box2">div box</div>
+    </div>
+</body>
+</html>

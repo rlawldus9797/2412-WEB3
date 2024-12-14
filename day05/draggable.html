@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $('.dragbox').draggable({cursor:'move', stack:'.dargbox'});
+            $('.dragbox').on('dragstart', function() {
+                $('.dragbox').css('opacity', 0.3);
+                $(this).css('opacity', 0.6);
+            });
+
+            $('.dragbox').on('dragstop', function() {
+                $('.dragbox').css('opacity', 1);
+            });
+        });
+    </script>
+    <style>
+        .dragbox {
+            width: 160px;
+            height: 160px;
+            text-align: center;
+            line-height: 160px;
+            font-weight: bold;
+            font-size: 2.2em;
+            margin: 20px;
+            border-radius: 80px;
+            font-family: Arial, sans-serif;
+            /* cursor: default; */
+        }
+
+        .box1 {
+            background-color: #69c;
+        }
+
+        .box2 {
+            background-color: #6c6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dragbox box1">drag1</div>
+    <div class="dragbox box2">drag2</div>
+</body>
+</html>
