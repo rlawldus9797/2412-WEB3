@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="/day04/jquery.tubular.1.0.js"></script>
+    <script>
+        $(function() {
+            $('.bg_movie').tubular({
+                ratio:16/9,
+                videoId:'NOhDyUmT9z0'
+            })
+        })
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #fc0;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 20px 40px;
+        }
+
+        #wrap {
+            position: relative;
+            z-index: 10000;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="bg_movie"></div>
+        <h1>YOUTUBE BG Video Plug-In</h1>
+    </div>
+</body>
+</html>
