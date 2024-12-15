@@ -328,9 +328,27 @@ jquery plugin - slide(bxslider, swiper, slick +) / jquery ui / fullpage
 
     jquery mouseWheel plugin >> 'mousewheel' >> event.deltaY (-1 , 1)
     js >> 'wheel' >> event.originalEvent.deltaY
+        animate : scrollTop속성
+
+    offset().top , .left : 문서기준 요소 위치인식
+    event.preventDefault() : 해당이벤트가 실행해야 하는 기본동작 방지
 
     video control >> video.pause() / play() / currnetTime=~s / video.duration (총 재생시간)
                      video.volume (0~1)
+
+
+    fullpage2 plug-in
+
+
+    scrollTop() >> 스크롤로 이동한 문서 이동거리 인식함수 (document)
+    header 높이보다 scrollTop() 수치가 같거나 크면 nav 에 .fix 추가
+
+    1. nav.offset.top()
+    
+    2. ~.height() parseInt(css('height'))
+        ~.innerHeight() : height + padding
+        ~.outerHeight() : height + padding + border
+        ~.outerHeight(true) : height + padding + border + margin
 -->
 
     

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function() {
+            const movie = $('#movie').get(0);
+            movie.currentTime = 12;
+            movie.volume = 0;
+            $('#play').on('click', function(){
+                movie.play();
+            })
+
+            $('#pause').on('click', function() {
+                movie.pause();
+            })
+
+            $('#stop').on('click', function() {
+                movie.currentTime = 0; 
+                movie.pause();
+            })
+
+            $('#restart').on('click', function() {
+                movie.currentTime = 0; 
+                movie.play();
+            })
+
+            $('#rwd').on('click', function() {
+                movie.currentTime -= 5; 
+                movie.pause();
+            })
+
+            $('#fwd').on('click', function() {
+                movie.currentTime += 5; 
+                movie.pause();
+            })
+        });
+    </script>
+</head>
+<body>
+    <video id="movie">
+        <source src="/etc/WITHOUT.MP4" type="video/mp4">
+    </video>
+    <div id="controller">
+        <button id="restart">restart</button>
+        <button id="rwd">rwd</button>
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="stop">stop</button>
+        <button id="fwd">fwd</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            //header 높이보다 스크롤이동이 같거나 클 경우 fix클래스를 nav에 추가
+            //작으면 fix클래스를 삭제
+
+            let scrollTopNum = 0; //스크롤 이동거리 정의 변수
+            const fixPosition = $('header').outerHeight();
+            $(window).scroll(function() {
+                scrollTopNum = $('html,body').scrollTop();
+                if(scrollTopNum >= fixPosition){
+                    $('nav').addClass('fix');
+                }else {
+                    $('nav').removeClass('fix');0
+                }
+            })
+        })
+    </script>
+    
+    <style>
+        body, header, nav, section {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 130px;
+            padding: 15px 20px;
+            background-color: #c9c;
+            border-bottom: 2px solid#408;
+
+        }
+
+        nav {
+            height: 50px;
+            line-height: 50px;
+            background-color: #69c;
+            color: #fff;
+            padding-left: 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            border-bottom: 2px solid #609;
+            position: absolute;
+            left: 0;
+            top: 162px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        nav.fix {
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .content {
+            min-height: 1360px;
+
+        }
+
+        section {
+            margin-top: 52px;
+        }
+    </style>
+</head>
+<body>
+    <header> h1, tnb</header>
+    <nav> ul (gnb)</nav>
+    <section>
+        <h2>main</h2>
+        <div class="content">content</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            const headerH = $('header').outerHeight();
+            const defaultTop = parseInt($('aside').css('top'));
+
+            let targetPosition = 0;
+            $(window).scroll(function(){
+                targetPosition = $(document).scrollTop()+50;
+                if(targetPosition <= defaultTop) {
+                    targetPosition = defaultTop;
+                }
+                $('aside').stop().animate({top:targetPosition}, 800)
+            });
+
+            $('aside>a').on('click', function(event) {
+                event.preventDefault();
+                $('html,body').stop().animate({scrollTop},500);
+            })
+        })
+    </script>
+    <style>
+        body,header,section,aside {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 140px;
+            background-color: #5ce;
+            border-bottom: 2px solid #009;
+        }
+
+        section {
+            min-height: 1600px;
+            margin-right: 120px;
+            background-color: #69c;
+            padding: 20px;
+        }
+
+        aside {
+            position: absolute;
+            right: 20px;
+            top: 162px;
+            width: 80px;
+            height: 200px;
+            padding: 10px 5px;
+            background-color: bisque;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        aside > a {
+            display: block;
+            color: #090909;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>h1, gnb</header>
+    <section>Main content</section>
+    <aside><span>Quick icon</span> <a href="#">top</a></aside>
+</body>
+</html>
