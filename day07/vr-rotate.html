@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            for(let i = 1; i<=36; i++) {
+                $('#vr_wrap').append(`<img src="vr/SWP_${i}.png" alt="">`);
+            }
+            $('#vr_wrap').find('img').hide();
+            $('#vr_wrap').find('img').eq(0).show();
+
+            let index = 0;
+            function rotateView() {
+                index++;
+                index = index%36
+                $('#vr_wrap').find('img').hide();
+                $('#vr_wrap').find('img').eq(index).show();
+            }
+            //setInterval( rotateView, 70 );
+
+            let timer; // intervalID;
+            $('.right').on('mousedown', function() {
+                timer = setInterval(rotateView, 70);
+            })
+            $('.right').on('mouseup', function() {
+                clearInterval(timer);
+            });
+
+            function rotateView2() {
+                index--;
+                if(index < 0) {
+                    index = 35;
+                }
+                $('#vr_wrap').find('img').hide();
+                $('#vr_wrap').find('img').eq(index).show();
+            }
+            $('.left').on('mousedown', function() {
+                timer = setInterval(rotateView2, 70);
+            });
+            $('.left').on('mouseup', function() {
+                clearInterval(timer);
+            });
+
+        });
+
+    </script>
+    <style>
+        #vr_wrap {
+            width: 960px;
+            height: 438px;
+            border: 2px solid #039;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        #vr_wrap > img {
+            display: block;
+            width: 960px;
+            height: 438px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #vr_wrap > button {
+            border: 0px;
+            background-color: #ccd;
+            width: 478px;
+            height: 40px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #039;
+            line-height: 40px;
+            position: absolute;
+            bottom: -42px;
+            cursor: pointer;
+        }
+
+        #vr_wrap > .left {
+            left: 0;
+        }
+
+        #vr_wrap > .right {
+            right: 0;
+        }
+
+        #vr_wrap > button:active {
+            background-color: #9ac;
+        }
+    </style>
+</head>
+<body>
+    <div id="vr_wrap">
+
+        <button class="left">left</button>
+        <button class="right">right</button>
+    </div>
+</body>
+</html>

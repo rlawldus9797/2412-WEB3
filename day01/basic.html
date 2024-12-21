@@ -349,6 +349,47 @@ jquery plugin - slide(bxslider, swiper, slick +) / jquery ui / fullpage
         ~.innerHeight() : height + padding
         ~.outerHeight() : height + padding + border
         ~.outerHeight(true) : height + padding + border + margin
+
+
+String(문자열)객체 내장함수
+    let txt = new String("~") / let text = "~"
+    속성 - .length (글자수 반환 속성)
+    String.charAt(순서) >> 순번에 맞는 문자 1개 반환
+    String.indexOf('검색할 문자') >> 문자 검색 후 일치하는 순서값 반환(없으면 -1 반환)
+    String.lastIndexOf('검색할 문자') >> 오른쪽부터 검색
+    String.replace('검색할 문자','교체문자')
+    String.substring(순서1, 순서2) >> 순서1부터 순서2까지 문자 반환
+    String.substr(순서, 글자수) >> 순서부터 글자수 만큼 문자 반환
+    String.split('구분문자') >> 구분문자로 문자를 나눠 배열로 반환
+        const text = "html_css_javascript"
+        let curri = text.split("_") >> ["html","css","javascript"]
+    String.toLowercase() >> 소문자로
+    String.toUppercase() >> 대문자로
+    String.trim() >> 문자 앞,뒤 공백 제거
+    String.match('검색할 문자') >> 검색후 일치하는 문자 반환환
+
+
+Window객체
+    Event : Resize, Blur, Focus, Move, Error, Unload, Load
+    크기인식 속성 : innerWidth, innerHeight / outerWidth, outerHeight
+    브라우저 정보 : window.navigator (navigator.userAgent)
+    
+    window.close() / window.focus() / window.blur()
+    window.open('url', 'name', 'properties')
+        properties:width="", height="", scrollbars="yes/no", menubar="y/n"
+        status="y/n" : 상태표시줄, resizable="y/n" : 크기조절 
+        location="y/n" : 주소입력란, toolbar="y/n" : 도구모음
+        left="", top=""
+    window.moveTo(x, y) >> 절대좌표
+    window.moveBy(x, y) >> 상대좌표
+    window.resizeTo(w, h) / resizeBy(w, h)
+    window.scrollTo(w, y) / window.scrollBy(x, y)
+    window.location.href="link"
+    window.location.reload() : 새로고침
+    window.location.replace(url) : 이전 url 히스토리에 저장 안함
+    window.location.assign(url) : 이전 url 히스토리에 저장함
+    window.history.back() / window.history.forward()
+    window.history.go(+/- index number)
 -->
 
     

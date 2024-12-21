@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let email = prompt("이메일 주소를 입력하세요", "");
+        // '@' , '.' >> indexOf('@') ,..
+        if(email.indexOf('@')>0 && email.indexOf('.')>2) {
+            console.log(`${email} : 이메일 정상입력 확인완료`)
+        }else {
+            alert('이메일을 다시 입력해주세요');
+            window.location.reload();
+        }
+
+        // 자바스크립트 정규 표현식 찾아보기
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

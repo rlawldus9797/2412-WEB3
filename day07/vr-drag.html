@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vr_wrap {
+            width: 960px;
+            height: 438px;
+            border: 2px solid #039;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        #vr_wrap > img {
+            display: block;
+            width: 960px;
+            height: 438px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #vr_wrap > button {
+            border: 0px;
+            background-color: #ccd;
+            width: 478px;
+            height: 40px;
+            font-size: 30px;
+            font-weight: bold;
+            color: #039;
+            line-height: 40px;
+            position: absolute;
+            bottom: -42px;
+            cursor: pointer;
+        }
+
+        #vr_wrap > .left {
+            left: 0;
+        }
+
+        #vr_wrap > .right {
+            right: 0;
+        }
+
+        #vr_wrap > button:active {
+            background-color: #9ac;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            for(let i = 1; i<=36; i++) {
+                $('#vr_wrap').append(`<img src="vr/SWP_${i}.png" alt="">`);
+            }
+            const imgs = $('#vr_wrap').find('img');
+            imgs.hide();
+            imgs.eq(0).show();
+            imgs.attr('draggable','false'); //<imgs src="" draggable="false" alt=""> 
+
+            let indexNum = 0;
+            function leftRotate() {
+                indexNum++;
+                if(indexNum>35) {indexNum = 0; }            
+                $('#vr_wrap>ing:visible').hide();
+                imgs.eq(indexNum).show();
+            }
+            function rightRotate() {
+                indexNum--;
+                if(indexNum<0) {indexNum = 35;}
+                $('#vr_wrap>img:visible').hide();
+                imgs.eq(indexNum).show();
+            }
+
+            let pastX = 0; // 이전 마우스 좌표 기록변수
+            let currentX = 0; // 현재 마우스 좌표 기록변수
+
+            $('#vr_wrap').on('mousedown', function(){
+                $(this).on('mousemove', function(e){
+                    pastX = currentX; // current값을 past에 전달
+                    currentX = e.pageX; // current에 현재 마우스좌표값 전달
+
+                    if(pastX < currentX) { // 오른쪽이동
+                        rightRotate();
+                    }else{                  // 왼쪽이동동
+                        leftRotate();
+                    }
+                });
+            });
+            $('body').on('mouseup', function(){
+                $('#vr_wrap').off('mousemove');
+            });
+            
+        });
+
+    </script>
+   
+  
+</head>
+<body>
+    <div id="vr_wrap">
+
+    </div>
+</body>
+</html>

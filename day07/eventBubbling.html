@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // 부모요소에 자식 이벤트 전달(이벤트 버블링)방지 - event.stopPropagation()
+        $(function(){
+            $('#wrap').click(function(){
+                console.log('#WRAP CLICK!!!')
+            });
+            $('#sub').click(function(e){
+                event.stopPropagation();
+                console.log('#SUB CLICK!!!')
+            });
+            $('#btn').click(function(e){
+                event.stopPropagation();
+                console.log('#BTN CLICK!!!')
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        #wrap {
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            box-sizing: border-box;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #390;
+        }
+
+        #sub {
+            width: 300px;
+            height: 300px;
+            background-color: #690;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        #btn {
+            width: 200px;
+            height: 200px;
+            background-color: #990;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="sub">
+            <div id="btn">button</div>
+        </div>
+    </div>
+</body>
+</html>

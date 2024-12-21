@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(Date.now());
+        const date = new Date('july 20, 1984 20:17:49');
+        console.log(date.getTime());
+        //1970년 1월 1일 0시부터 경과된 시간 밀리초 표현
+        const now = new Date();
+        const targetDay = new Date(2024, 11, 25);
+        let calcTime = targetDay.getTime() - now.getTime();
+        let D_day = Math.ceil(calcTime/(1000*60*60*24))
+        if(D_day>0) {
+            document.write(`올해 크리스마스까지 ${D_day}일 남았습니다.`);
+        }else {
+            document.write(`2024 크리스마스가 ${Math.abs(D_day)}일 지났습니다.`);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

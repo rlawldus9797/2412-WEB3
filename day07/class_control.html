@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        selector.className = "~" : 클래스 지정
+        selector.classList.add("~") : 클래스 추가
+        selector.classList.remove("~") : 클래스 삭제
+        selector.classList.contains("~") : 지정클래스 유무 확인(true/false)
+        selector.classList.replace("a","b") : a클래스를 b로 교체
+        selector.classList.item(index) : 여러개 클래스 적용시 순서 정의
+        selector.classList.toggle("~") : 토글클래스 적용
+
+        */
+    </script>
+    <style>
+        :root {
+            --bg-color:#face23;
+            --text-color:#1792ef;
+            --box-width:400px;
+            --box-height:200px;
+        }
+
+        #box {
+            background:var(--bg-color);
+            color:var(--text-color);
+            width:var(--box-width);
+            height:var(--box-height);
+        }
+
+        #box.change {
+            background: var(--text-color);
+            color: var(--bg-color);
+            width: var(--box-height);
+            height: var(--box-width);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">click - class change</div>
+    <script>
+        const box = document.querySelector('#box');
+        box.addEventListener('click', ()=> {
+            //box.classList.toggle('change'); << 방식1
+
+            // const currentClass = box.className; << 방식2
+            // if(currentClass != "change") {
+            //     box.className = "change";
+            // }else {
+            //     box.className = "";
+            // }
+
+            // const hasClass = box.classList.contains('change'); << 방식3
+            // if(!hasClass) {
+            //     box.classList.add('change');
+            // }else {
+            //     box.classList.remove('change');
+            // }
+        })
+    </script>
+</body>
+</html>
