@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* html,body {
+            width: 100%;
+            height: 100%;
+        } */
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            position: relative;
+        }
+
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <section></section>
+    <script>
+        const area = document.querySelector('section');
+        const createSnow = ()=> {
+            const snow = document.createElement('span');
+            area.appendChild(snow);
+            snow.style.left = Math.random()*window.innerWidth + 'px';
+            snow.style.top = Math.random()*(-800) + 'px';
+            snow.size = Math.random()*6 + 4; // 4~10 사이 랜덤수치치 생성
+            snow.style.width = snow.size + 'px';
+            snow.style.height = snow.size + 'px';
+            snow.style.opacity = snow.size/10;
+
+            let yposition = parseInt(snow.style.top);
+            let xposition = parseInt(snow.style.left);
+            let yspeed = snow.size*0.14; // 크기에 비례한 y증가분 수치
+            let x_radian = snow.size*0.002;
+            let radius = snow.size*2;
+            let radian = 0;
+            let xDirection = Math.random();
+
+            (function(){
+                const snowing=()=>{
+                    window.requestAnimationFrame(snowing);
+                    yposition += yspeed;
+                    if(yposition >= window.innerHeight + 15) {
+                        yposition = Math.random()*(-50);
+                        xDirection = Math.random();
+                    }
+
+                    snow.style.top = `${yposition}px`;
+                    radian+=x_radian;
+                    if(radian>=Math.PI*2){radian = 0;}
+                    if(xDirection>0.5){
+                        snow.style.left = xposition + Math.sin(radian)*radius + "px";
+                    }else {
+                        snow.style.left = xposition - Math.sin(radian)*radius + "px";
+                    }
+                }
+                snowing();
+            })();
+        }
+        for(let i=1; i<=100; i++) {
+            createSnow();
+        }
+
+    </script>
+</body>
+</html>

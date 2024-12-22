@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let sinValue = 0; // radian단위 주의
+        let yPosition =0;
+
+        const moving = ()=>{
+            window.requestAnimationFrame(moving);
+            sinValue += 0.04;
+            yPosition += 3;
+            // 삼항식 (condition) ? true실행 : false실행
+            (sinValue >= Math.PI*2) ? sinValue=0:sinValue=sinValue;
+            (yPosition >= 600) ? yPosition=0:yPosition=yPosition;
+            document.querySelector('span').style.left = Math.sin(sinValue)*50 + 'px'
+            document.querySelector('span').style.top = yPosition + 'px'
+        }
+
+        moving();
+    </script>
+    <style>
+        span {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #0cf;
+            position: relative;
+            margin: 50px 300px;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+</body>
+</html>
